@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText_input"
+        android:layout_width="215dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_output"
+        android:layout_width="213dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_contof"
+        android:layout_width="136dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/conToF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_contoc"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_output" />
+
+    <Button
+        android:id="@+id/button_contoc"
+        android:layout_width="134dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/conToC"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_contof"
+        app:layout_constraintTop_toBottomOf="@+id/text_output" />
+
+</android.support.constraint.ConstraintLayout>

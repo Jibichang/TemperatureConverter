@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Temperature Converter</string>
+    <string name="conToC">แปลง F เป็น C</string>
+    <string name="conToF">แปลง C เป็น F</string>
+</resources>
