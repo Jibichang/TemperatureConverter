@@ -1,14 +1,11 @@
 package com.example.aomek.temperatureconverter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,29 +23,33 @@ public class MainActivity extends AppCompatActivity {
         cButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 TextView outputTextView = (TextView)findViewById(R.id.text_output);
                 int input = Integer.parseInt(inputEditText.getText().toString());
 
-                double temp = (input - 32)*0.5556;
-                String str = String.format("%.0f", temp);
-                String resultText =  str + " °C";
-                outputTextView.setText(resultText);
+                double result = conToC(input);
+                if((result%1 == 0)) { outputTextView.setText((int)result + ""); }
+                else { outputTextView.setText(result + ""); }
             }
         });
 
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 TextView outputTextView = (TextView)findViewById(R.id.text_output);
                 int input = Integer.parseInt(inputEditText.getText().toString());
 
-                double temp = input*1.8 + 32;
-                String str = String.format("%.0f", temp);
-                String resultText =  str + " °F";
-                outputTextView.setText(resultText);
+                double result = conToF(input);
+                if((result%1 == 0)) { outputTextView.setText((int)result + ""); }
+                else { outputTextView.setText(result + ""); }
             }
         });
+    }
+
+    public double conToC(int input){
+        return (double)Math.round(((input - 32)*0.5556)*100)/100D;
+    }
+
+    public double conToF(int input){
+        return (double)Math.round((input*1.80 + 32)*100)/100D;
     }
 }
